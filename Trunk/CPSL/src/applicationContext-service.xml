@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<!-- 业务逻辑层模板 -->
+	<bean id="serviceTemplate" abstract="true">
+		<!-- 基础数据库操作对象 -->
+		<property name="baseDao" ref="baseDao" />
+	</bean>
+	
+	<!-- 用户管理 -->
+	<bean id="userManageService" parent="serviceTemplate" class="com.xtoee.service.impl.UserManageServiceImpl">
+	</bean>
+	
+	<!-- 设备管理 -->
+	<bean id="deviceManageService" class="com.xtoee.service.impl.DeviceManageServiceImpl">
+	</bean>
+	
+	<!-- 任务管理 -->
+    <bean id="taskManageService" class="com.xtoee.service.impl.TaskManageServiceImpl">
+    </bean>
+    
+    <!-- 日志管理 -->
+    <bean id="logManageService" class="com.xtoee.service.impl.LogManageServiceImpl">
+    </bean>
+    
+    <!-- 配置管理 -->
+    <bean id="configManageService" class="com.xtoee.service.impl.ConfigManageServiceImpl">
+    </bean>
+    
+    <!-- 档案管理 -->
+    <bean id="archiveManageService" class="com.xtoee.service.impl.ArchiveManageServiceImpl">
+    </bean>
+    
+</beans>

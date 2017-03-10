@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 指定Hibernate配置文件的DTD信息 -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        
+<!-- hibernate-configuration是连接配置文件的根元素 -->
+<hibernate-configuration>
+    <session-factory>
+        <!-- 指定连接池连接数 -->
+        <property name="hibernate.c3p0.min_size">1</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        
+        <!-- 指定连接池里连接的超时时长 -->
+        <property name="hibernate.c3p0.timeout">5000</property>
+        
+        <!-- 指定连接池里最大缓存多少个Statement对象 -->
+        <property name="hibername.c3p0.max_statements">100</property>
+        <property name="hibername.c3p0.idle_test_period">3000</property>
+        <property name="hibername.c3p0.acquire_increment">2</property>
+        <property name="hibername.c3p0.validate">true</property>
+        
+        <!-- 指定数据库方言 -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        
+        <!-- 显示SQL语句 -->
+        <property name="show_sql">false</property>
+        
+        <!-- 根据需要自动创建数据表 -->
+        <property name="hbm2ddl.auto">update</property>
+        
+        <!-- 罗列所有的映射文件 -->
+        <mapping resource="com/xtoee/po/User.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

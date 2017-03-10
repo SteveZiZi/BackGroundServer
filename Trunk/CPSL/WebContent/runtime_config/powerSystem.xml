@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+  <serverPort desc="服务器接收设备Socket连接的端口">8888</serverPort>
+  <maxHeartBeatInterval desc="最大心跳间隔毫秒数">300000</maxHeartBeatInterval>
+  <statePollInterval desc="设备状态轮询间隔毫秒数">3000</statePollInterval>
+  <readTimeOut desc="服务器等待设备响应的超时毫秒数">5000</readTimeOut>
+  <devices>
+    <device>
+      <id desc="设备ID">1</id>
+      <type desc="设备类型">DCU</type>
+      <name desc="设备名">DCU#01</name>
+      <ip desc="IP地址">192.168.1.6</ip>
+      <port desc="端口号">10000</port>
+      <logicAddress desc="逻辑地址">50050001</logicAddress>
+      <masterAddress desc="主站地址">94</masterAddress>
+      <statePollInterval desc="设备状态轮训间隔">3000</statePollInterval>
+    </device>
+  </devices>
+</root>

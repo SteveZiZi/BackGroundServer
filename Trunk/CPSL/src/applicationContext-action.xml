@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<!-- JSP页面管理 -->
+    <bean id="getPageAction" class="com.xtoee.action.GetPageAction" scope="prototype">
+    </bean>
+    
+	<!-- 用户管理 -->
+	<bean id="userAction" class="com.xtoee.action.UserAction" scope="prototype">
+		<property name="userManageService" ref="userManageService" />
+	</bean>
+	
+	<!-- 设备管理 -->
+    <bean id="deviceAction" class="com.xtoee.action.DeviceAction" scope="prototype">
+        <property name="deviceManageService" ref="deviceManageService" />
+    </bean>
+    
+    <!-- 任务管理 -->
+    <bean id="taskAction" class="com.xtoee.action.TaskAction" scope="prototype">
+        <property name="deviceManageService" ref="deviceManageService" />
+        <property name="taskManageService" ref="taskManageService" />
+    </bean>
+    
+    <!-- 日志管理 -->
+    <bean id="alarmLogAction" class="com.xtoee.action.AlarmLogAction" scope="prototype">
+        <property name="deviceManageService" ref="deviceManageService" />
+        <property name="logManageService" ref="logManageService" />
+    </bean>
+    
+    <!-- 配置管理 -->
+    <bean id="sysConfigAction" class="com.xtoee.action.SysConfigAction" scope="prototype">
+        <property name="deviceManageService" ref="deviceManageService" />
+        <property name="configManageService" ref="configManageService" />
+    </bean>
+    
+    <!-- 档案管理 -->
+    <bean id="archiveAction" class="com.xtoee.action.ArchiveAction" scope="prototype">
+        <property name="deviceManageService" ref="deviceManageService" />
+        <property name="archiveManageService" ref="archiveManageService" />
+    </bean>
+
+</beans>
